@@ -6,21 +6,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href="tailwind.css" rel="stylesheet">
+  <link href="tailwind.css" rel="stylesheet" type="text/css">
+  <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="dark:bg-black text-white p-10 ">
-  <nav>
+  <nav id="Home">
     <div class="flex justify-between text-center pl-5 ">
-      <a href="#">
-        <h1>PerfectMisfits</h1>
-      </a>
-      <!-- TODO: make navbar menu items collapse into a hamburger menu on smaller screens -->
-      <ul class="flex justify-between items-center">
-        <li class="mr-8"><a href="">Home</a></li>
-        <li class="mr-8"><a href="">About</a></li>
-        <li class="mr-8"><a href="">Roadmap</a></li>
-      </ul>
+      <div class="flex">
+        <!-- Hamburger menu, visible in small screens -->
+        <button type="menu" onclick="openSideBar()" class="mr-3 sm:hidden hover:text-fuchsia-900">
+            <i class="fas fa-bars"></i>    
+        </button>
+        <a href="#Home">
+          <h1>PerfectMisfits</h1>
+        </a>
+      </div>
+      <div id="main-menu" class="sidebar sm:contents">
+        <button type="button" onclick="closeSideBar()" class="closebtn text-3xl ml-5 sm:hidden hover:text-fuchsia-900">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul id="menu-list" class="hidden sm:flex sm:justify-between sm:items-center">
+          <li class="mr-8"><a class="block" href="#Home">Home</a></li>
+          <li class="mr-8"><a class="block" href="#About">About</a></li>
+          <li class="mr-8"><a class="block" href="#Roadmap">Roadmap</a></li>
+        </ul>
+      </div>
       <ul class="flex justify-between items-center">
         <li class="mr-5 text-fuchsia-900"><a href=""><i class="fab fa-discord"></i></a></li>
         <li class="mr-5 text-fuchsia-900"><a href=""><i class="fab fa-twitter"></i></a></li>
@@ -29,7 +40,7 @@
     </div>
     <hr class="m-5">
   </nav>
-  <section class="p-5 flex justify-between items-center flex-col-reverse lg:flex-row">
+  <section id="About" class="p-5 flex justify-between items-center flex-col-reverse lg:flex-row">
     <div class="min-h-full w-full flex flex-col justify-evenly text-center lg:w-1/2 lg:text-left">
       <h1 class="font-semibold text-2xl lg:text-5xl">The All New NFT Collection Celebrating Youth Culture</h1>
       <h4 class="leading-loose">The Perfect Misfits Collection contains <b><i>10,000 Hand Made</i></b> NFT collectables
@@ -44,12 +55,13 @@
   <section>
     <!-- slideshow showcase section -->
   </section>
-  <section>
+  <section id="Roadmap">
     <!-- Roadmap section -->
   </section>
-  <footer>
+  <footer id="footer">
     <!-- footer section -->
   </footer>
+  <script src="index.js"> </script>
 </body>
 
 </html>
